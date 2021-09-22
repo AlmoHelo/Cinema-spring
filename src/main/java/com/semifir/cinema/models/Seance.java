@@ -1,5 +1,6 @@
 package com.semifir.cinema.models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Seance {
 	
 	@Id
 	private String id;
-	private String date;
+	private LocalDate date;
 	
 	@DBRef
 	@Field("film")
