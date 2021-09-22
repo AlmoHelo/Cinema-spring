@@ -6,4 +6,5 @@ import com.semifir.cinema.models.Film;
 
 public interface FilmRepository extends MongoRepository<Film, String> {
 
+
 }
