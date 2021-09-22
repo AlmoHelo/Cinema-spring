@@ -3,9 +3,12 @@ package com.semifir.cinema;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.semifir.cinema.repositories.CinemaRepository;
 import com.semifir.cinema.repositories.FilmRepository;
 import com.semifir.cinema.repositories.SalleRepository;
 import com.semifir.cinema.repositories.SeanceRepository;
+import com.semifir.cinema.services.CinemaService;
+import com.semifir.cinema.services.CinemaServiceImpl;
 import com.semifir.cinema.services.FilmService;
 import com.semifir.cinema.services.FilmServiceImpl;
 import com.semifir.cinema.services.SalleService;
@@ -29,5 +32,10 @@ public class AppConfig {
 	@Bean
 	public SalleService salleService(SalleRepository salleRepository) {
 		return new SalleServiceImpl(salleRepository);
+	}
+
+	@Bean
+	public CinemaService cinemaService(CinemaRepository cinemaRepository) {
+		return new CinemaServiceImpl(cinemaRepository);
 	}
 }
