@@ -25,5 +25,5 @@ public class Seance {
 	
 	@DBRef
 	@Field("film")
-	private List<Film> films = new ArrayList<>();
+	private Film film;
 }
