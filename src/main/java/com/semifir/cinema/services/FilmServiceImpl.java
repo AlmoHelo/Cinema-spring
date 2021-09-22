@@ -35,11 +35,6 @@ public class FilmServiceImpl implements FilmService {
 
 
 	@Override
-	public void delete(String id) {
-		this.filmRepository.deleteById(id);
-	}
-
-	@Override
 	public Film patchFilm(String id, Film film) {
 		Film findFilm = this.filmRepository.findById(id).get();
 		if(film.getNom() != null) {
@@ -50,9 +45,14 @@ public class FilmServiceImpl implements FilmService {
 		if(film.getDuree() != null) {
 			findFilm.setDuree(film.getDuree());
 		}else {
-			findFilm.setDuree(film.getDuree());
+			findFilm.setDuree(findFilm.getDuree());
 		}
 		return this.filmRepository.save(findFilm);
+	}
+
+	@Override
+	public void delete(String id) {
+		this.filmRepository.deleteById(id);
 	}
 
 
